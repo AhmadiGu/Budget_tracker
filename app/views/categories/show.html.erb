@@ -1,0 +1,29 @@
+<div class="col-10 offset-1 mt-5"> 
+    <h3 class="text-secondary fw-semibold text-center"> Gategory by <%= current_user.name %></h3> 
+    <div class="row row-cols-2 border border-secondary shadow p-3 mb-5 bg-body rounded opacity-75"> 
+        
+        <div >
+        <img src="<%= @category.icon%>" >
+        <h3><%= @category.name %></h3>
+        <%= button_to "Delete", @category, method: :delete, class:"btn btn-outline-danger"%> 
+         
+        </div>
+        <h4>Total amount: <span>$<%= @category.entities.sum(:amount)%></span></h4>
+         
+        <% if @entities.empty? %>
+        <h2 class="transactions-title">Transactions</h2>
+        <p class="transactions-title">No transactions have been added yet.</p>
+      <% else %>
+        <h2 class="transactions-title">Transactions</h2>
+          <% @entities.each do |entity| %>
+            <div class="transaction">
+              <h3><%= entity.name%></h3>
+              <h4>$<%= entity.amount%></h4>
+              <%= link_to 'Edit this Transaction', "#{edit_entity_path(entity.id)}?category_id=#{@category.id}", class:"btn btn-outline-success" %>
+            </div> 
+          <% end %> 
+      <% end %>
+       
+   </div> 
+ <%= link_to 'Add New Transaction',  "#{new_entity_path}?category_id=#{@category.id}", class:"btn btn-outline-success" %>
+</div>

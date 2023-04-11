@@ -1,0 +1,13 @@
+<div class="col-10 offset-1 mt-5">
+<h1>Transaction</h1>
+ 
+  <% @entities.each do |entity| %>
+    <%= render entity %>
+    <p>
+      <%= link_to "Show this entity", entity %>
+    </p>
+  <% end %>
+ 
+
+<%= link_to "New entity", new_entity_path %>
+</div>

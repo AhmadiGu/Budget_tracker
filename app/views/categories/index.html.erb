@@ -1,0 +1,21 @@
+<div class="col-10 offset-1 mt-5">
+<% if @categories.length > 0 %>  
+    <h3 class="text-secondary fw-semibold text-center"> Gategory by <%= current_user.name %></h3> 
+    <div class="row row-cols-2 border border-secondary shadow p-3 mb-5 bg-body rounded opacity-75">
+      <% @categories.each do |category| %>
+        <img src="<%= category.icon%>" >
+        <div >
+         <%= link_to category.name , category_path(category.id) %>
+         <small><%= category.created_at.strftime("%d %b %Y") %></small>
+        </div>
+        <p id="amount">$<%= category.entities.sum(:amount)%></p>
+         
+
+         
+      <% end %>
+   </div> 
+<% else %>
+<h3 class="text-warning text-center">Welcome to the Category Page No Category Exists Please Added Once!</h3> 
+<%end %>
+ <%= link_to 'Add New Category', new_category_path, class:"btn btn-outline-success" %>
+</div>
