@@ -1,20 +1,26 @@
+<div class="menu">
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="36" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg>
+<h2 class="text-light text-center">Log In</h2>
+<%= link_to "Next", new_user_registration_path, class: "text-light text-center"%>
+</div>
 <div class="col-md-4 offset-md-4 col-sm-8 offset-sm-2 mt-5">
-<h2 class="text-secondary text-center">Log in</h2>
+ 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
    
-    <%= f.label :email %> 
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control mt-2 mb-2 opacity-75" %> 
-  
-    <%= f.label :password %> 
-    <%= f.password_field :password, autocomplete: "current-password", class:"form-control mt-2 mb-2 opacity-75" %> 
+     
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email",  class:"form-control mt-5 mb-2 opacity-75" %>  
+     
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class:"form-control mt-4 mb-2 opacity-75" %> 
 
   <% if devise_mapping.rememberable? %> 
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %> <br />
   <% end %> 
    
-  <%= f.submit "Log in", class:"btn btn-outline-secondary fw-bold" %>
+  <%= f.submit "Log in", class:"btn btn-outline-primary fw-bold mt-5 center" %>
   
 <% end %>
-<%= render "devise/shared/links" %>
+<h4 class=" text-center log_link"><%= render "devise/shared/links" %></h4>
 </div>

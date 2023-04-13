@@ -1,6 +1,12 @@
+<div class="menu">
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="36" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg>
+<h2 class="text-light text-center">Edit <%= resource_name.to_s.humanize %></h2>
+<%= link_to "Next", new_user_session_path, class: "text-light text-center"%>
+</div>
 <div class="col-md-4 offset-md-4 col-sm-8 offset-sm-2 mt-5">
-<h2 class="text-warning text-center">Edit <%= resource_name.to_s.humanize %></h2> 
-
+ 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %> 
   
