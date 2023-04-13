@@ -1,29 +1,43 @@
-<div class="col-10 offset-1 mt-5"> 
-    <h3 class="text-secondary fw-semibold text-center"> Gategory by <%= current_user.name %></h3> 
-    <div class="row row-cols-2 border border-secondary shadow p-3 mb-5 bg-body rounded opacity-75"> 
+<div class="menu">
+<a href="/categories" class="text-light"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="36" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg></a>
+<h2 class="text-light text-center">Details</h2>
+<span></span> 
+</div>
+<div class="col-10 offset-1 mt-5 p-2"> 
+  <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+    <div class="row row-cols-1 shadow p-3 mb-5 bg-body opacity-75"> 
         
-        <div >
-        <img src="<%= @category.icon%>" >
-        <h3><%= @category.name %></h3>
-        <%= button_to "Delete", @category, method: :delete, class:"btn btn-outline-danger"%> 
-         
-        </div>
-        <h4>Total amount: <span>$<%= @category.entities.sum(:amount)%></span></h4>
-         
+      <div class="border-bottom mb-3"> 
+        <h5><img src="<%= @category.icon%>" ><span><%= @category.name %></span></h5>  
+      </div> 
+
+      <div class="border-bottom  mb-3"> 
         <% if @entities.empty? %>
-        <h2 class="transactions-title">Transactions</h2>
-        <p class="transactions-title">No transactions have been added yet.</p>
-      <% else %>
-        <h2 class="transactions-title">Transactions</h2>
-          <% @entities.each do |entity| %>
-            <div class="transaction">
-              <h3><%= entity.name%></h3>
-              <h4>$<%= entity.amount%></h4>
-              <%= link_to 'Edit this Transaction', "#{edit_entity_path(entity.id)}?category_id=#{@category.id}", class:"btn btn-outline-success" %>
-            </div> 
-          <% end %> 
-      <% end %>
-       
+         <h5>Transactions</h5>
+          <p>No transactions have been added yet.</p>
+        <% else %> 
+         <h5>Transactions</h5>
+         <% @entities.each do |entity| %>
+           <div>
+            <p>Name:<%= entity.name%></p>
+            <div class="row row-cols-2">
+            <small >created_at:<%= entity.created_at.strftime("%d %b %Y") %></small>
+            <%= link_to 'Edit this Transaction', "#{edit_entity_path(entity.id)}?category_id=#{@category.id}", class:"btn btn-outline-success btn-sm" %>
+           </div> </div>
+         <% end %> 
+       <% end %> 
+      </div>  
+
+      <div class="row row-cols-2"><h5>TOTAL PAYMENT:</h5><span class="text-end">$<%= @category.entities.sum(:amount)%></span></div>
    </div> 
- <%= link_to 'Add New Transaction',  "#{new_entity_path}?category_id=#{@category.id}", class:"btn btn-outline-success" %>
+</div>
+<div class="btn_dev1 fixed-bottom">
+ <%= link_to 'ADD NEW TRANSACTION',  "#{new_entity_path}?category_id=#{@category.id}", class:"btn btn-outline-light pt-3 pb-3 log-btn" %>
 </div>

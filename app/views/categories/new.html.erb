@@ -1,5 +1,12 @@
+<div class="menu">
+<%= render partial: "categories/navbar" %>
+<h2 class="text-light text-center">Add New Category</h2> 
+<% if(user_signed_in?) %>
+<%= button_to "Sign out", destroy_user_session_path, :method => :delete, data: {turbo: false}, class: "text-light text-center me-3"%>
+<% end %>
+</div>
 <div class="col-md-4 offset-md-4 col-sm-8 offset-sm-2 mt-5">
-<h3 class=" text-secondary fw-semibold text-center"> Add New Category</h3> 
+ 
 <%= form_with model: @category, url: categories_path, method: :post do |f| %>
     <% if @category.errors.any? %>
     <div style="color: red">
@@ -17,11 +24,13 @@
      <%= f.text_field :name, placeholder: "Name", autofocus: true, class:"form-control mt-2 mb-2 opacity-75" %> 
 
      <%= f.label :icon %> 
-     <%= f.file_field :icon, placeholder: "Icon Link", class:"form-control mt-2 mb-2 opacity-75"  %> 
+     <%= f.text_field :icon, placeholder: "Icon Link", class:"form-control mt-2 mb-2 opacity-75"  %> 
       
      <br /> 
-     <%= f.submit "Create Category", class:"btn btn-outline-secondary fw-bold" %> 
+     <%= f.submit "Create Category", class:"btn btn-primary center" %> 
   
-<% end %>
-<%= link_to "Back to category list", categories_path, class:"offset-8 text-secondary" %>
+<% end %> 
+</div>
+<div class="btn_dev1 fixed-bottom">
+ <%= link_to "BACK to CATEGORY LIST", categories_path, class:"btn btn-outline-light pt-3 pb-3 log-btn" %>
 </div>

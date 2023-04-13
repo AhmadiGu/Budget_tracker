@@ -18,13 +18,13 @@
      <%= f.number_field :amount, step: "0.01", required:true, placeholder: 'Amount', class:"form-control mt-2 mb-2 opacity-75"  %> 
 
     
-      <%= f.label :category %><%= @category_id %>
+      <%= f.label :category %><br/>
       <%= f.select :category_ids, @categories.to_a.map { |category| [category.name, category.id, selected: @category_id == category.id] }, {include_blank: false}, { multiple: true, required: true} %>
       
      <%= f.hidden_field :category_id, value: @category_id %> 
       
      <br /> 
-     <%= f.submit "Create Transaction", class:"btn btn-outline-secondary fw-bold mt-2 mb-3" %> 
+     <%= f.submit "Create Transaction", class:"btn btn-primary fw-bold mt-2 mb-3 center" %> 
 
      <div class="alert alert-warning">
      <p >Improtant Note:</p >
