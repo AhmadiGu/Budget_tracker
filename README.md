@@ -76,7 +76,7 @@ In order to run this project you need:
 
 Clone this repository by using the command line :
 
-- `git clone https://github.com/asharanjith/Food-planner.git`
+- `git clone https://github.com/AhmadiGu/Budget_tracker`
 
 ### Install
 
