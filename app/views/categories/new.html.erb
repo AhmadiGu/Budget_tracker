@@ -1,0 +1,36 @@
+<div class="menu">
+<%= render partial: "categories/navbar" %>
+<h2 class="text-light text-center">Add New Category</h2> 
+<% if(user_signed_in?) %>
+<%= button_to "Sign out", destroy_user_session_path, :method => :delete, data: {turbo: false}, class: "text-light text-center me-3"%>
+<% end %>
+</div>
+<div class="col-md-4 offset-md-4 col-sm-8 offset-sm-2 mt-5">
+ 
+<%= form_with model: @category, url: categories_path, method: :post do |f| %>
+    <% if @category.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+        <% @category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    
+     <%= f.label :name %> 
+     <%= f.text_field :name, placeholder: "Name", autofocus: true, class:"form-control mt-2 mb-2 opacity-75" %> 
+
+     <%= f.label :icon %> 
+     <%= f.text_field :icon, placeholder: "Icon Link", class:"form-control mt-2 mb-2 opacity-75"  %> 
+      
+     <br /> 
+     <%= f.submit "Create Category", class:"btn btn-primary center" %> 
+  
+<% end %> 
+</div>
+<div class="btn_dev1 fixed-bottom">
+ <%= link_to "BACK to CATEGORY LIST", categories_path, class:"btn btn-outline-light pt-3 pb-3 log-btn" %>
+</div>

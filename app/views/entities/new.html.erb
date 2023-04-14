@@ -1,0 +1,12 @@
+<div class="menu">
+<%= render partial: "entities/navbar" %>
+<h2 class="text-light text-center">Add New Transaction</h2> 
+<%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "text-light text-center me-3 " %>
+</div>
+<div class="col-md-4 offset-md-4 col-sm-8 offset-sm-2 mt-5">
+
+  <%= render "form", entity: @entity %> 
+</div>
+<div class="btn_dev1 fixed-bottom">
+ <%= link_to 'BACK TO TRANSACTION LIST', entities_path, class:"btn btn-outline-light pt-3 pb-3 log-btn" %>
+</div>
