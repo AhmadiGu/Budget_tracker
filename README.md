@@ -55,7 +55,7 @@ The Budget Tracker app is a mobile web application where you can manage your bud
 
 ### Live Demo <a name="live-demo"></a>
 
-[Click here to see the live demo](https://money-minder-djf9.onrender.com/)
+[Click here to see the live demo]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
