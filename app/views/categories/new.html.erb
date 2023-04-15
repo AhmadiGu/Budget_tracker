@@ -1,12 +1,11 @@
 <div class="menu">
-<%= render partial: "categories/navbar" %>
-<h2 class="text-light text-center">Add New Category</h2> 
-<% if(user_signed_in?) %>
-<%= button_to "Sign out", destroy_user_session_path, :method => :delete, data: {turbo: false}, class: "text-light text-center me-3"%>
-<% end %>
+  <%= render partial: "categories/navbar" %>
+  <h2 class="text-light text-center">Add New Category</h2> 
+  <% if(user_signed_in?) %>
+    <%= button_to "Sign out", destroy_user_session_path, :method => :delete, data: {turbo: false}, class: "text-light text-center me-3"%>
+  <% end %>
 </div>
-<div class="col-md-4 offset-md-4 col-sm-8 offset-sm-2 mt-5">
- 
+<div class="col-md-4 offset-md-4 col-sm-8 offset-sm-2 mt-5"> 
 <%= form_with model: @category, url: categories_path, method: :post do |f| %>
     <% if @category.errors.any? %>
     <div style="color: red">

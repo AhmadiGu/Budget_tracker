@@ -5,7 +5,7 @@ RSpec.describe '/entity', type: :request do
 
   describe 'GET /new' do
     before do
-      @user = User.create(name: 'Guli', email: 'example@gmail.com', password: '123123', password_confirmation: '123123')
+      @user = User.create(name: 'Gulalai', email: 'example@gmail.com', password: '123123', password_confirmation: '123123')
       sign_in @user
       @category = Category.create!(name: 'category', icon: 'img', author_id: @user.id)
       get new_entity_path(category_id: @category.id)

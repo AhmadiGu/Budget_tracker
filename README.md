@@ -137,7 +137,7 @@ Feel free to check the [issues page](../../issues/).
 
 <!-- SUPPORT -->
 
-## ⭐️ Show your support <a name="support"></a>
+## ⭐️ Show your support and gave a star<a name="support"></a>
 
 If you like this project by staring it.
 

@@ -2,19 +2,16 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_category, only: %i[show edit update destroy]
 
-  # GET /users or /users.json
   def index
     @categories = Category.where(author_id: current_user.id) || []
   end
 
-  # GET /users/1 or /users/1.json
   def show
     @category = Category.find(params[:id])
     @entities = @category.entities
     authorize! :read, @category
   end
 
-  # GET /users/new
   def new
     @category = Category.new
     render 'new'
@@ -34,7 +31,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1 or /users/1.json
   def update
     respond_to do |format|
       if @category.update(category_params)
@@ -47,7 +43,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # DELETE /users/1 or /users/1.json
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
