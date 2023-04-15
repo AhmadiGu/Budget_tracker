@@ -9,23 +9,19 @@
 <div class="col-md-4 offset-md-4 col-sm-8 offset-sm-2 mt-4">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %> 
-
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form-control mt-2 mb-2 opacity-75" %>
-  
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email", class:"form-control mt-2 mb-2 opacity-75" %> 
-
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class:"form-control mt-2 mb-2 opacity-75" %> 
-   
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control mt-2 mb-2 opacity-75" %> 
-   
-    <%= f.submit "Sign up", class:"btn btn-outline-primary fw-bold mt-5 center" %>
+  <div class="bg-light mt-5 p-3">
+    
+    <%= f.text_field :name, placeholder: "Full Name", autocomplete: "name", class:"form-control mt-2 mb-2 opacity-75" %>
+     <hr />
+    
+    <%= f.email_field :email,placeholder: "Email", autocomplete: "email", class:"form-control mt-2 mb-2 opacity-75" %> 
+     <hr />
+    <%= f.password_field :password, placeholder: "Password (6 character minimum)", autocomplete: "new-password", class:"form-control mt-2 mb-2 opacity-75" %> 
+     <hr />
+    
+    <%= f.password_field :password_confirmation,placeholder: "Password confirmation", autocomplete: "new-password", class:"form-control mt-2 mb-2 opacity-75" %> 
+    </div>
+    <%= f.submit "SIGN UP", class:"btn btn-primary log-btn1 fw-bold mt-5 center" %>
    
 <% end %> 
 

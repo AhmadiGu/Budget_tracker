@@ -3,6 +3,7 @@
 body {
   font-family: 'Proxima Nova', sans-serif;
   margin: 0;
+  background-color: #cecece30;
   color: #434b549a;
 }
 
@@ -14,9 +15,30 @@ select {
   width: 100%;
 }
 
+form input {
+  border-radius: 0% !important;
+  padding: 10px 8px !important;
+  border: none !important; 
+   
+}
+
+form input[type=submit] {
+  border-radius: 10px !important;
+  padding: 5px 8px !important;
+}
+
 .menu button {
   border: none;
   background: transparent;
+}
+
+.form-control {
+  background: transparent;
+}
+
+hr {
+  width: 95%;
+  margin-left: 2.5%;
 }
 
 .main,
@@ -32,8 +54,18 @@ select {
   height: 72vh;
 }
 
+.color {
+  color: rgba(0, 0, 0, 0.545) !important;
+}
+
 .content {
   padding-top: 200px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;  
+  justify-content:space-evenly;
 }
 
 .title img {
@@ -42,7 +74,12 @@ select {
 }
 
 .log-btn {
-  width: 100%;
+  width: 90%;
+  border-radius: 0% !important; 
+}
+
+.log-btn1 {
+  background: #3778c2;  
 }
 
 .btn_dev {
@@ -50,6 +87,9 @@ select {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .menu {
@@ -78,7 +118,9 @@ select {
 
 .btn_dev1 {
   background: #5fb523;
-  padding: 1rem;
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
 }
 
 .welcome {
@@ -90,6 +132,10 @@ select {
 .btn-outline-light:hover {
   background: #5fb523;
   color: aliceblue;
+}
+.image {
+  width: 80px;
+  height: 80px; 
 }
 
 @media (min-width: 980px) {
