@@ -18,8 +18,7 @@ select {
 form input {
   border-radius: 0% !important;
   padding: 10px 8px !important;
-  border: none !important; 
-   
+  border: none !important;
 }
 
 form input[type=submit] {
@@ -64,8 +63,8 @@ hr {
 
 .info {
   display: flex;
-  flex-direction: column;  
-  justify-content:space-evenly;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .title img {
@@ -75,11 +74,11 @@ hr {
 
 .log-btn {
   width: 90%;
-  border-radius: 0% !important; 
+  border-radius: 0% !important;
 }
 
 .log-btn1 {
-  background: #3778c2;  
+  background: #3778c2;
 }
 
 .btn_dev {
@@ -89,7 +88,6 @@ hr {
   gap: 20px;
   align-items: center;
   justify-content: center;
-
 }
 
 .menu {
@@ -118,9 +116,9 @@ hr {
 
 .btn_dev1 {
   background: #5fb523;
-  display: flex; 
+  display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .welcome {
@@ -133,9 +131,10 @@ hr {
   background: #5fb523;
   color: aliceblue;
 }
+
 .image {
   width: 80px;
-  height: 80px; 
+  height: 80px;
 }
 
 @media (min-width: 980px) {
