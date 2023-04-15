@@ -137,6 +137,26 @@ hr {
   height: 80px;
 }
 
+.log {
+  background: transparent;
+  color: aliceblue !important;
+}
+
+.space {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feild {
+  background-color: transparent !important;
+}
+
+.feild:focus {
+  outline: none;
+  border: none;
+}
+
 @media (min-width: 980px) {
   .main {
     justify-content: center;
