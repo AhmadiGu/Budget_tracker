@@ -2,14 +2,13 @@
 <%= render partial: "entities/navbar" %>
 <h2 class="text-light text-center">Transactions</h2> 
 <% if(user_signed_in?) %>
-<%= button_to "Sign out", destroy_user_session_path, :method => :delete, data: {turbo: false}, class: "text-light text-center me-3"%>
+   <%= button_to "Sign out", destroy_user_session_path, :method => :delete, data: {turbo: false}, class: "text-light text-center me-3"%>
 <% end %>
 </div>
 <div class="col-12 main_con">
  <div>
   <% @entities.each do |entity| %>
-  <div class="col-10 offset-1 row row-cols-2 shadow p-3 mt-3 bg-body opacity-75">
- 
+  <div class="col-10 offset-1 row row-cols-2 shadow p-3 mt-3 bg-body opacity-75"> 
     <%= render entity %> 
     <p>
       <%= link_to "Show this transaction", entity %>
@@ -18,6 +17,6 @@
   <% end %>
   </div> 
 </div>
-<div class="btn_dev1 fixed-bottom">
+<div class="btn_dev1 fixed-bottom p-3">
  <%= link_to 'ADD NEW TRANSACTION', new_entity_path, class:"btn btn-outline-light pt-3 pb-3 log-btn" %>
 </div>

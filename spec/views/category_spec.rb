@@ -5,7 +5,7 @@ RSpec.describe '/categories', type: :request do
 
   describe 'GET /new' do
     before do
-      @user = User.create(name: 'Guli', email: 'example@gmail.com', password: '123456', password_confirmation: '123456')
+      @user = User.create(name: 'Gulalai', email: 'example@gmail.com', password: '123456', password_confirmation: '123456')
       sign_in @user
       get new_category_path
     end
@@ -17,7 +17,7 @@ RSpec.describe '/categories', type: :request do
 
   describe 'GET /index' do
     before do
-      @user = User.create(name: 'Guli', email: 'example@gmail.com', password: '123456', password_confirmation: '123456')
+      @user = User.create(name: 'Gulalai', email: 'example@gmail.com', password: '123456', password_confirmation: '123456')
       sign_in @user
       get new_category_path
       @category = Category.create!(name: 'category', icon: 'img', author_id: @user.id)

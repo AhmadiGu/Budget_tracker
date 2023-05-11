@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  # added device usage parts
   protect_from_forgery with: :exception
 
   before_action :authenticate_user!

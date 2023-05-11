@@ -6,6 +6,7 @@ class Category < ApplicationRecord
 
   def self.total_amount(user)
     total_amount = 0
+
     @categories = Category.where(author_id: user) || []
     @categories.each do |category|
       amount = category.entities.sum(:amount)

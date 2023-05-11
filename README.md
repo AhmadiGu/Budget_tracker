@@ -53,7 +53,7 @@ The Budget Tracker app is a mobile web application where you can manage your bud
 - **Introduce new transactions associated with a category**
 - **See the money spent on each category**
 
-### Live Demo <a name="live-demo"></a>
+### Live Demo <a name="live-demo"> https://budget-app-p05r.onrender.com/</a>
 
 [Click here to see the live demo]
 
@@ -76,7 +76,7 @@ In order to run this project you need:
 
 Clone this repository by using the command line :
 
-- `git clone https://github.com/asharanjith/Food-planner.git`
+- `git clone https://github.com/AhmadiGu/Budget_tracker`
 
 ### Install
 
@@ -137,7 +137,7 @@ Feel free to check the [issues page](../../issues/).
 
 <!-- SUPPORT -->
 
-## ⭐️ Show your support <a name="support"></a>
+## ⭐️ Show your support and gave a star<a name="support"></a>
 
 If you like this project by staring it.
 

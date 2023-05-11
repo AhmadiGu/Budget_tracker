@@ -65,7 +65,6 @@ class EntitiesController < ApplicationController
     @entity = Entity.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def entity_params
     params.require(:entity).permit(:name, :amount, :category_id, category_ids: []).merge(author_id: current_user.id)
   end
